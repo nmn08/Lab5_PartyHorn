@@ -4,23 +4,27 @@ document.getElementById("volume-number").addEventListener("change", changeSlide)
 document.getElementById("volume-slider").addEventListener("change", changeNumber);
 
 function changeSlide() {
-    var volValue = document.getElementById("volume-number");
+    var numInput = document.getElementById("volume-number");
+    var slideInput = document.getElementById("volume-slider");
     var audio = document.getElementById("horn-sound");
-    audio.volume = parseInt(volValue.value)/100;
-    volValue.setAttribute("value", volValue.value);
-    document.getElementById("volume-slider").setAttribute("value",parseInt(volValue.value));
-    document.getElementById("volume-slider").value = volValue.value;
-    changeIcon(volValue.value);
+
+    audio.volume = parseInt(numInput.value)/100;
+    // volValue.setAttribute("value", volValue.value);
+    // document.getElementById("volume-slider").setAttribute("value",parseInt(volValue.value));
+    document.getElementById("volume-slider").value = numInput.value;
+    changeIcon(numInput.value);
 }
 
 function changeNumber() {
-    var volValueSli = document.getElementById("volume-slider");
+    var numInput = document.getElementById("volume-number");
+    var slideInput = document.getElementById("volume-slider");
     var audio = document.getElementById("horn-sound");
-    audio.volume = parseInt(volValueSli.value)/100;
-    volValueSli.setAttribute("value", volValueSli.value);
-    document.getElementById("volume-number").setAttribute("value",parseInt(volValueSli.value));
-    document.getElementById("volume-number").value = volValueSli.value;
-    changeIcon(volValueSli.value);
+
+    audio.volume = parseInt(slideInput.value)/100;
+    // volValueSli.setAttribute("value", volValueSli.value);
+    // document.getElementById("volume-number").setAttribute("value",parseInt(volValueSli.value));
+    numInput.value = slideInput.value;
+    changeIcon(slideInput.value);
 }
 
 // Change the volume icon
