@@ -1,7 +1,7 @@
 // main.js
 // Add event when the textual indicator of sound level change
 document.getElementById("volume-number").addEventListener("change", changeSlide);
-document.getElementById("volume-slider").addEventListener("change", changeNumber);
+document.getElementById("volume-slider").addEventListener("input", changeNumber);
 
 function changeSlide() {
     var numInput = document.getElementById("volume-number");
